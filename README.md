@@ -32,4 +32,4 @@ If you need help with something, don't hesitate to contact me on my [discord ser
 
 ## Betterlog.js log
 
-![log](https://cdn.discordapp.com/attachments/1031615083702394940/1059803255753945138/image.png)
+![log](https://cdn.discordapp.com/attachments/1031615083702394940/1059807047757082684/image.png)

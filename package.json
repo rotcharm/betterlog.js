@@ -1,6 +1,6 @@
 {
   "name": "betterlog.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Better console-log.",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,10 @@
     "consolelog"
   ],
   "author": "sparrowlmao",
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/sparrowlmao/betterlog.js.git"
+	},
+  "homepage": "https://discord.gg/6hFE7A8TPu",
   "license": "ISC"
 }

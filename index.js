@@ -1,11 +1,11 @@
 const warn = (log) => {
     const today = new Date();
-    return console.log(`[\x1b[34m${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}\x1b[0m => \x1b[31mWARN\x1b[0m] - ${log}`);
+    return console.log(`[\x1b[34m${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}\x1b[0m => \x1b[33mWARN\x1b[0m] - ${log}`);
 };
 
 const info = (log) => {
     const today = new Date();
-    return console.log(`[\x1b[34m${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}\x1b[0m => \x1b[32mINFO\x1b[0m] - ${log}`);
+    return console.log(`[\x1b[34m${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}\x1b[0m => \x1b[37mINFO\x1b[0m] - ${log}`);
 };
 
 const error = (log) => {
