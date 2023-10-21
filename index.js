@@ -1,139 +1,28 @@
-const log = (log) => {
+function log (level, color, log) {
     const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[32mLOG\x1b[0m] - ${log}`);
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+  
+    console.log(`[\x1b[34m${hours}:${minutes}:${seconds}\x1b[0m => \x1b[${color}${level}\x1b[0m] - ${log}`);
   };
-
-const warn = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[2;33mWARN\x1b[0m] - ${log}`);
-};
-
-const info = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[32mINFO\x1b[0m] - ${log}`);
-};
-
-const error = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[31mERROR\x1b[0m] - ${log}`);
-};
-
-const debug = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[90mDEBUG\x1b[0m] - ${log}`);
-};
-
-const ready = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[34mREADY\x1b[0m] - ${log}`);
-};
-
-const database = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[36mDATABASE\x1b[0m] - ${log}`);
-};
-
-const event = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[33mEVENT\x1b[0m] - ${log}`);
-};
-
-const heartbeat = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[35mHEARTBEAT\x1b[0m] - ${log}`);
-};
-
-const shard = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[32mSHARD\x1b[0m] - ${log}`);
-};
-
-const cluster = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[90mCLUSTER\x1b[0m] - ${log}`);
-};
-
-const command = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[36mCOMMAND\x1b[0m] - ${log}`);
-};
-
-const notice = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[36mNOTICE\x1b[0m] - ${log}`);
-};
-
-const critical = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[31mCRITICAL\x1b[0m] - ${log}`);
-};
-
-const trace = (log) => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
-
-    return console.log(`[\x1b[34m${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}\x1b[0m => \x1b[34mTRACE\x1b[0m] - ${log}`);
-};
-
- 
-module.exports = {
+  
+  const log = (log) => log('LOG', '32m', log);
+  const warn = (log) => log('WARN', '2;33m', log);
+  const info = (log) => log('INFO', '32m', log);
+  const error = (log) => log('ERROR', '31m', log);
+  const debug = (log) => log('DEBUG', '90m', log);
+  const ready = (log) => log('READY', '34m', log);
+  const database = (log) => log('DATABASE', '36m', log);
+  const event = (log) => log('EVENT', '33m', log);
+  const heartbeat = (log) => log('HEARTBEAT', '35m', log);
+  const shard = (log) => log('SHARD', '32m', log);
+  const cluster = (log) => log('CLUSTER', '90m', log);
+  const command = (log) => log('COMMAND', '36m', log);
+  const notice = (log) => log('NOTICE', '36m', log);
+  const critical = (log) => log('CRITICAL', '31m', log);
+  const trace = (log) => log('TRACE', '34m', log);
+  
+  module.exports = {
     warn, log, info, error, debug, ready, database, event, heartbeat, shard, cluster, command, notice, critical, trace
-};
+  };
